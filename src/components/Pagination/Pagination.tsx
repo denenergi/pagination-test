@@ -1,6 +1,6 @@
 import { v4 as uuid4 } from 'uuid';
 import classNames from 'classnames';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getNumbers } from '../../utils';
 import { User } from '../../types';
 
@@ -24,9 +24,9 @@ export const Pagination: React.FC<Props> = ({
     setActivePage(1);
   }, [perPageSelector]);
 
-  useCallback(() => {
+  useEffect(() => {
     onPageChange(+activePage);
-  }, [activePage, onPageChange]);
+  }, [activePage]);
 
   return (
     <>
